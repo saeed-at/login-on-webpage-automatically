@@ -40,7 +40,7 @@ Then save text file and change it's name to `run_my_code.cmd'. Startup directroy
   <img 
     width="700"
     height="300"
-    src="./images/login_page.png"
+    src="./images/starup.png"
   >
 </p>
 
