@@ -1,4 +1,4 @@
 username: saeed.alijani
-password: 1376Enola
+password: saed12it
 url: https://internet.aut.ac.ir
 wifi names: Wi-Fi 5GHz,DIR-615
