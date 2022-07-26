@@ -8,12 +8,17 @@ import subprocess
 import re  
 
 class AutoConnectWifi():
-    def __init__(self, wifi_ssids, url, password, username):
-        self.wifi_ssids = wifi_ssids
-        print(self.wifi_ssids)
-        self.url = url
-        self.password = password
-        self.username = username
+    def __init__(self):
+        config = {}
+        with open("data.txt") as file:
+            for line in file:
+                line = line[0:len(line)-1]
+                key,value = line.split(': ')
+                config[key] = value
+        self.wifi_ssids = list(config['wifi names'].split(','))
+        self.url = config['url']
+        self.password = config['password']
+        self.username = config['username']
         
     def scan_all_available_wifi(self):
         logger.info('Scanning all available WiFi...')
@@ -32,6 +37,7 @@ class AutoConnectWifi():
         for wifi_ssid in self.wifi_ssids:
             if wifi_ssid in self.available_wifi:
                 winwifi.WinWiFi.connect(wifi_ssid)
+                self.connected_wifi = wifi_ssid
                 flag = True
                 break
         return flag
@@ -50,13 +56,17 @@ class AutoConnectWifi():
         logger.info("Done!")
         enter.click()
         driver.close()
+    
 
 if __name__ == "__main__":
-    auto_connect = AutoConnectWifi(['Wi-Fi 5GHz', 'Dir-615'], 'https://internet.aut.ac.ir/', '1376Enola', 'saeed.alijani')
+    auto_connect = AutoConnectWifi()
     auto_connect.scan_all_available_wifi()
     res = auto_connect.connect()
     if res:
+        logger.info('Connected to %s' % auto_connect.connected_wifi)
         auto_connect.login()
     else:
         logger.error('No known WiFi found!...')
+        #do not exit cmd window
+        os.system("pause")
     
