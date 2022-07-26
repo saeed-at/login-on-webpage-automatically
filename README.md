@@ -37,7 +37,8 @@ First, you have to find the startup folder, press `Windows + R` and then write `
 ```
 python {your_startup_path}\main.py
 ```
-Then save the text file and change its name to `run_my_code.cmd`. Startup directroy should look like this :  <p align="center">
+Then save the text file and change its name to `run_my_code.cmd`. Startup directroy should look like this : 
+<p align="center">
   <img 
     width="1000"
     height="150"
