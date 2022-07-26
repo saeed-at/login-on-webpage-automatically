@@ -57,4 +57,11 @@ You have to set your username, password, url, wifi names in `config.txt` as belo
 </p>
 
 # Runnig 
-If you do all steps correctly, when you turn on your laptop or pc, this window will show up and after logging in to the site, it will disappear:
+If you do all steps correctly, when you turn on your laptop or pc, this window will show up:
+ <p align="center">
+  <img 
+    width="700"
+    height="300"
+    src="./images/cmd.png"
+  >
+</p>
