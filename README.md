@@ -56,11 +56,11 @@ You have to set your username, password, url, wifi names in `config.txt` as belo
   >
 </p>
 
-# Runnig 
+# Running 
 If you do all steps correctly, when you turn on your laptop or pc, this window will show up:
  <p align="center">
   <img 
-    width="700"
+    width="500"
     height="300"
     src="./images/cmd.png"
   >
