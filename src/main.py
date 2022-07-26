@@ -29,13 +29,34 @@ class AutoConnectWifi():
     def connect(self):
         logger.info('Connectiing to WiFi...')
         flag = False
-        for wifi_ssid in wifi_ssids:
+        for wifi_ssid in self.wifi_ssids:
             if wifi_ssid in self.available_wifi:
                 winwifi.WinWiFi.connect(wifi_ssid)
                 flag = True
                 break
         return flag
 
+    def login(self):
+        logger.info('Logging in...')
+        options = webdriver.ChromeOptions()
+        options.headless = True
+        driver = webdriver.Chrome(options=options)
+        driver.get(self.url)
+        username = driver.find_element(By.NAME, 'username')
+        password = driver.find_element(By.NAME, 'password')
+        enter = driver.find_element(By.ID, 'internetbutton')
+        username.send_keys('saeed.alijani')
+        password.send_keys('1376Enola')
+        logger.info("Done!")
+        enter.click()
+        driver.close()
 
-a = AutoConnectWifi(['Wi-Fi 5GHz'], 'https://google.com', 'saeed', '1236') 
-a.scan_all_available_wifi()
+if __name__ == "__main__":
+    auto_connect = AutoConnectWifi(['Wi-Fi 5GHz', 'Dir-615'], 'https://internet.aut.ac.ir/', '1376Enola', 'saeed.alijani')
+    auto_connect.scan_all_available_wifi()
+    res = auto_connect.connect()
+    if res:
+        auto_connect.login()
+    else:
+        logger.error('No known WiFi found!...')
+    
