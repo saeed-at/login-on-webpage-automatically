@@ -19,9 +19,7 @@
   >
 </p>
 
-<div style="text-align: justify"> I wonder if I could write a code that logs in automatically with each startup in windows os and this code will do the trick. ( it's easy to change to code for another login page; you need to replace username, password, and Enter elements with your website's elements by using inspect in the browser; if you have any problems email me :wink:).
-  
- The code will automatically try connecting to the `wifi names` list that you set in the `config.txt` file and after that, it will log in with the `username` and `password` you have put in the `config.txt` file. If no known WiFis are available, it will get you an error message that no wifi is available.</div>
+<div style="text-align: justify">I was wondering if I could write a code that logs in automatically with each startup in windows os, this code will do the trick. ( it's easy to change to code for another login page; you need to replace username, password, and Enter elements with your website's elements by using inspect in the browser; if you have any problems email me 😉). The code will automatically try connecting to the wifi names list that you set in the config.txt file and after that, it will log in with the username and password you have put in the config.txt file. If no known WiFis are available, it will get you an error message that no wifi is available.</div>
 
 # Steps to setup code to work as it should
 ## Step1 : Install python and required modules
