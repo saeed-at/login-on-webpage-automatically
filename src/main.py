@@ -18,14 +18,14 @@ class AutoConnectWifi():
         config = {}
         with open("config.txt") as file:
             for line in file:
-                line = line[0:len(line)-1]
+                line = line[0:len(line)]
                 key,value = line.split(': ')
                 config[key] = value
         self.wifi_ssids = list(config['wifi names'].split(','))
         self.url = config['url']
         self.password = config['password']
         self.username = config['username']
-        
+
     def scan_all_available_wifis(self):
         """_summary_: Scan all available wifi and save them as a list of strings and stores in self.available_wifis variable.
         """
@@ -38,7 +38,7 @@ class AutoConnectWifi():
             s = re.findall(':.+\n', ssid)
             ssid_name = s[0][2:]
             self.available_wifis.append(ssid_name[0:(len(ssid_name)-2)])
-        
+
     def connect(self):
         """_summary_: Connect to the wifi with the given ssid.
 
@@ -51,6 +51,7 @@ class AutoConnectWifi():
             if wifi_ssid in self.available_wifis:
                 winwifi.WinWiFi.connect(wifi_ssid)
                 self.connected_wifi = wifi_ssid
+                print('here')
                 flag = True
                 break
         return flag
@@ -66,8 +67,8 @@ class AutoConnectWifi():
         username = driver.find_element(By.NAME, 'username')
         password = driver.find_element(By.NAME, 'password')
         enter = driver.find_element(By.ID, 'internetbutton')
-        username.send_keys('saeed.alijani')
-        password.send_keys('1376Enola')
+        username.send_keys(self.username)
+        password.send_keys(self.password)
         enter.click()
         driver.close()
         logger.info("Done!")
