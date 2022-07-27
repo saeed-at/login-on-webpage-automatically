@@ -31,7 +31,7 @@ First, install python and then use this command to install all required modules 
 ```
 pip install -r requirements.txt
 ```
-## Step 2 : Move copy files from `src` folder to `startup` folder and make cmd file to run it:
+## Step 2 : Move files from `src` folder to `startup` folder and make cmd file to run it:
 
 First, you have to find the startup folder, press `Windows + R` and then write `shell:startup` and press OK and copy all files from `src` to the window that opened by pressing OK. Now make a text file in the startup directory and write this command in it :
 ```
