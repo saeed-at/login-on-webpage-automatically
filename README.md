@@ -9,6 +9,18 @@
   >
 </p>
 
+- [Introduction](#introduction)
+- [Steps to setup code to work as it should](#steps-to-setup-code-to-work-as-it-should)
+  * [Step1 : Install python and required modules](#step1---install-python-and-required-modules)
+  * [Step 2 : Move all files from `src` folder to any folder you like.](#step-2---move-all-files-from--src--folder-to-any-folder-you-like)
+  * [Step 3 : Make a text file and copy commands below in it and finally save it with the name `run.bat` :](#step-3---make-a-text-file-and-copy-commands-below-in-it-and-finally-save-it-with-the-name--runbat---)
+  * [Step 4 : Make shortcut of `run.bat` file and and put it in `startup` directory :](#step-4---make-shortcut-of--runbat--file-and-and-put-it-in--startup--directory--)
+  * [Step 5 : Set config.txt](#step-5---set-configtxt)
+- [Running](#running)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 # Introduction
 <div style="text-align: justify"> This code has been written for logging automatically in the AmirKabir University's internet site. Each time when you turn on your PC or laptop, you have to connect to the university's router, then you have to open your browser and go to https://internet.aut.ac.ir and fill in your username and password on this webpage as below, after logging in you will have access to the internet with your system. </div>
   <p align="center">
