@@ -8,7 +8,6 @@ from loguru import logger
 import subprocess
 import re
 import time
-from selenium.webdriver.support.ui import WebDriverWait
 
 class AutoConnectWifi():
     def __init__(self):
@@ -82,7 +81,6 @@ if __name__ == "__main__":
     res = auto_connect.connect()
     if res:
         logger.info('Connected to %s' % auto_connect.connected_wifi)
-        print('here')
         auto_connect.login()
     else:
         logger.error('No known WiFi found!...')
