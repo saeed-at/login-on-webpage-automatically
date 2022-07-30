@@ -29,22 +29,16 @@ First, install python and then use this command to install all required modules 
 ```
 pip install -r requirements.txt
 ```
-## Step 2 : Move files from `src` folder to `startup` folder and make cmd file to run it:
-
-First, you have to find the startup folder, press `Windows + R` and then write `shell:startup` and press OK and copy all files from `src` to the window that opened by pressing OK. Now make a text file in the startup directory and write this command in it :
+## Step 2 : Move all files from `src` folder to any folder you like.
+## Step 3 : Make a text file and copy commands below in it and finally save it with the name `run.bat` :
+```bat
+@echo off 
+python "{full path of your main.py file in your pc or laptop}"
 ```
-python {your_startup_path}\main.py
-```
-Then save the text file and change its name to `run_my_code.cmd`. Startup directroy should look like this : 
-<p align="center">
-  <img 
-    width="1000"
-    height="150"
-    src="./images/startup.png"
-  >
-</p>
+## Step 4 : Make shortcut of `run.bat` file and and put it in `startup` directory :
+you have to find the startup folder, press `Windows + R` and then write `shell:startup` and press OK and copy `run.bat` shortcut to the opened window.
 
-## Step 3 : Set config.txt
+## Step 5 : Set config.txt
 
 You have to set your username, password, url, wifi names in `config.txt` as below.: (remember that there is always a space after each `:` and wifi names are your default wifi's SSIDs)
  <p align="center">
