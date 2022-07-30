@@ -2,10 +2,13 @@ import winwifi
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 import os
 from loguru import logger
 import subprocess
-import re  
+import re
+import time
+from selenium.webdriver.support.ui import WebDriverWait
 
 class AutoConnectWifi():
     def __init__(self):
@@ -51,7 +54,6 @@ class AutoConnectWifi():
             if wifi_ssid in self.available_wifis:
                 winwifi.WinWiFi.connect(wifi_ssid)
                 self.connected_wifi = wifi_ssid
-                print('here')
                 flag = True
                 break
         return flag
@@ -62,14 +64,14 @@ class AutoConnectWifi():
         logger.info('Logging in...')
         options = webdriver.ChromeOptions()
         options.headless = True
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome()
         driver.get(self.url)
+        
         username = driver.find_element(By.NAME, 'username')
         password = driver.find_element(By.NAME, 'password')
         enter = driver.find_element(By.ID, 'internetbutton')
         username.send_keys(self.username)
         password.send_keys(self.password)
-        enter.click()
         driver.close()
         logger.info("Done!")
     
@@ -80,9 +82,11 @@ if __name__ == "__main__":
     res = auto_connect.connect()
     if res:
         logger.info('Connected to %s' % auto_connect.connected_wifi)
+        print('here')
         auto_connect.login()
     else:
         logger.error('No known WiFi found!...')
         #do not exit cmd window
         os.system("pause")
     
+
