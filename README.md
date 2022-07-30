@@ -12,9 +12,9 @@
 - [Introduction](#introduction)
 - [Steps to setup code to work as it should](#steps-to-setup-code-to-work-as-it-should)
   * [Step1 : Install python and required modules](#step1---install-python-and-required-modules)
-  * [Step 2 : Move all files from `src` folder to any folder you like.](#step-2---move-all-files-from--src--folder-to-any-folder-you-like)
-  * [Step 3 : Make a text file and copy commands below in it and finally save it with the name `run.bat` :](#step-3---make-a-text-file-and-copy-commands-below-in-it-and-finally-save-it-with-the-name--runbat---)
-  * [Step 4 : Make shortcut of `run.bat` file and and put it in `startup` directory :](#step-4---make-shortcut-of--runbat--file-and-and-put-it-in--startup--directory--)
+  * [Step 2 : Move all files from `src` folder to any folder you like](#step-2---move-all-files-from--src--folder-to-any-folder-you-like)
+  * [Step 3 : Make a text file and copy commands below in it and finally save it with the name `run.bat` ](#step-3---make-a-text-file-and-copy-commands-below-in-it-and-finally-save-it-with-the-name--runbat---)
+  * [Step 4 : Make shortcut of `run.bat` file and and put it in `startup` directory ](#step-4---make-shortcut-of--runbat--file-and-and-put-it-in--startup--directory--)
   * [Step 5 : Set config.txt](#step-5---set-configtxt)
 - [Running](#running)
 
