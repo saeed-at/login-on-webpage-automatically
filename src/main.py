@@ -8,6 +8,7 @@ from loguru import logger
 import subprocess
 import re
 import time
+from selenium.webdriver.support.ui import WebDriverWait
 
 class AutoConnectWifi():
     def __init__(self):
@@ -23,7 +24,10 @@ class AutoConnectWifi():
                 line = line[0:len(line)]
                 key,value = line.split(': ')
                 config[key] = value
+            file.close()
+            
         self.wifi_ssids = list(config['wifi names'].split(','))
+        
         self.url = config['url']
         self.password = config['password']
         self.username = config['username']
@@ -33,9 +37,11 @@ class AutoConnectWifi():
         """
         logger.info('Scanning all available WiFi...')
         self.available_wifis = []
+        
         devices = subprocess.check_output(['netsh','wlan','show','network'])
         devices = devices.decode('ascii')
         string_ = re.findall('SSID.+\n', devices)
+        
         for ssid in string_:
             s = re.findall(':.+\n', ssid)
             ssid_name = s[0][2:]
@@ -61,23 +67,30 @@ class AutoConnectWifi():
         """_summary_: Login to the website with the given username and password.
         """
         logger.info('Logging in...')
+        
         options = webdriver.ChromeOptions()
         options.headless = True
-        driver = webdriver.Chrome()
+        
+        driver = webdriver.Chrome(options=options)
+        
         driver.get(self.url)
         
         username = driver.find_element(By.NAME, 'username')
         password = driver.find_element(By.NAME, 'password')
         enter = driver.find_element(By.ID, 'internetbutton')
+        
         username.send_keys(self.username)
         password.send_keys(self.password)
+        
         driver.close()
         logger.info("Done!")
     
 
 if __name__ == "__main__":
     auto_connect = AutoConnectWifi()
+    
     auto_connect.scan_all_available_wifis()
+    
     res = auto_connect.connect()
     if res:
         logger.info('Connected to %s' % auto_connect.connected_wifi)
