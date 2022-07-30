@@ -33,7 +33,7 @@
 <div style="text-align: justify">I was wondering if I could write a code that logs in automatically with each startup in windows os, this code will do the trick. ( it's easy to change to code for another login page; you need to replace username, password, and Enter elements with your website's elements by using inspect in the browser; if you have any problems email me 😉). The code will automatically try connecting to the wifi names list that you set in the config.txt file and after that, it will log in with the username and password you have put in the config.txt file. If no known WiFis are available, it will get you an error message that no wifi is available.</div>
 
 # Steps to setup code to work as it should
-## Step1 : Install python and required modules.
+## Step1 : Install python and required modules
 
 
 First, install python and then use this command to install all required modules for the requirements.txt file with the code as below in cmd:
@@ -41,12 +41,12 @@ First, install python and then use this command to install all required modules 
 pip install -r requirements.txt
 ```
 ## Step 2 : Move all files from `src` folder to any folder you like.
-## Step 3 : Make a text file and copy commands below in it and finally save it with the name `run.bat`:
+## Step 3 : Make a text file and copy commands below in it and finally save it with the name `run.bat`
 ```bat
 @echo off 
 python "{full path of your main.py file in your pc or laptop}"
 ```
-## Step 4 : Make shortcut of `run.bat` file and and put it in `startup` directory:
+## Step 4 : Make shortcut of `run.bat` file and and put it in `startup` directory
 you have to find the startup folder, press `Windows + R` and then write `shell:startup` and press OK and copy `run.bat` shortcut to the opened window.
 
 ## Step 5 : Set config.txt
