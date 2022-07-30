@@ -18,7 +18,6 @@
   * [Step 5 : Set config.txt](#step-5---set-configtxt)
 - [Running](#running)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 # Introduction
